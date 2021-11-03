@@ -1,0 +1,33 @@
+$bgColor:#24baef;
+$layerBgColor:#a8a8a83d;
+$padding:5px;
+$fontBold:900;
+$top:0;
+$bottom:0;
+$left:0;
+$right:0;
+$fontSecondColor:#949cb0;
+
+.vote{
+   background-color: #24baef;
+   font-weight: $fontBold;
+   padding: $padding;
+};
+
+.desc::before ,.desc::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  background-color:$layerBgColor ;
+  left: $left;
+
+}
+.desc::before {
+  width: 25%;
+  top:$top;
+};
+.desc::after{
+  width: 100%;
+  bottom:$bottom;
+};
+

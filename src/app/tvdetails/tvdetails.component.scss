@@ -1,0 +1,18 @@
+$fontBold:900;
+$paddingSide:5px;
+$hide:hidden;
+$marginSide:5px;
+$floatLeft:left;
+$floatRight:right;
+
+.desc{
+    overflow: $hide;
+}
+.desc  p{
+    background-color: #24baef;
+    font-weight: $fontBold;
+    padding:$paddingSide;
+    float: $floatLeft;
+    margin:$marginSide;
+    border-radius: 5%
+ };

@@ -1,0 +1,33 @@
+<div class="container vh-100 d-flex align-items-center pt-5">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="movie-img">
+        <img
+          [src]="imgPrefix + detailsPerson.profile_path"
+          alt="poster-person"
+          class="w-100 img"
+        />
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-6 col-12">
+      <div class="movie-desc">
+        <div class="details py-4">
+          <h3>{{detailsPerson.name }}</h3>
+        <p>{{ detailsPerson.biography|desc:10}}</p>
+        </div>
+        <div class="about py-5 px-2">
+          <p>Birthday : {{ detailsPerson.birthday }}</p>
+          <p *ngIf="detailsPerson.deathday">Day of death: {{detailsPerson.deathday}}</p>
+          <p>Place of birthday : {{ detailsPerson.place_of_birth }}</p>
+          <p>Major : {{ detailsPerson.known_for_department }}</p>
+          <p *ngIf="detailsPerson.homepage">Homepage :<a [href]="detailsPerson.homepage" >{{ detailsPerson.homepage }}</a>
+          </p>
+        </div>
+
+       <!-- <div class="details">
+          <p>{{ detailsMovie.overview | tirm: 2 }}</p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

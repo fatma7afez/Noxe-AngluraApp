@@ -1,0 +1,130 @@
+<section class="w-100 vh-100 d-flex align-items-center justify-content-center">
+  <div class="w-50">
+    <h2 class="mb-2 h1">Register Now</h2>
+    <div  *ngIf="errors" class="alert alert-danger">
+        {{errors}}
+    </div>
+  
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="submitRegisterForm(registerForm)"
+      class="my-3"
+    >
+      <div class="mb-3">
+        <label for="first_name" class="mb-1">First name :</label>
+        <input
+          formControlName="first_name"
+          type="text"
+          class="form-control mb-2"
+        />
+        <div
+          *ngIf="
+            registerForm.get('first_name')?.errors != null &&
+            registerForm.get('first_name')?.touched
+          "
+          class="alert alert-danger"
+        >
+          <p *ngIf="registerForm.get('first_name')?.errors?.required">
+            First name is required
+          </p>
+          <p *ngIf="registerForm.get('first_name')?.errors?.minlength">
+            First name is minLength is 3
+          </p>
+          <p *ngIf="registerForm.get('first_name')?.errors?.maxlength">
+            First name is maxLength is 8
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="last_name" class="mb-1">Last name :</label>
+        <input
+          formControlName="last_name"
+          type="text"
+          class="form-control mb-2"
+        />
+        <div
+        *ngIf="
+          registerForm.get('last_name')?.errors != null &&
+          registerForm.get('last_name')?.touched
+        "
+        class="alert alert-danger"
+      >
+        <p *ngIf="registerForm.get('last_name')?.errors?.required">
+          Last name is required
+        </p>
+        <p *ngIf="registerForm.get('last_name')?.errors?.minlength">
+          Last name is minLength is 3
+        </p>
+        <p *ngIf="registerForm.get('last_name')?.errors?.maxlength">
+          Last name is maxLength is 8
+        </p>
+      </div>
+      </div>
+      <div class="mb-3">
+        <label for="age" class="mb-1">Age :</label>
+        <input formControlName="age" type="number" class="form-control mb-2" />
+        <div
+        *ngIf="
+          registerForm.get('age')?.errors != null &&
+          registerForm.get('age')?.touched
+        "
+        class="alert alert-danger"
+      >
+        <p *ngIf="registerForm.get('age')?.errors?.required">
+          Age is required
+        </p>
+        <p *ngIf="registerForm.get('age')?.errors?.min">
+          Age is min age is 16
+        </p>
+        <p *ngIf="registerForm.get('age')?.errors?.max">
+          Age is max age is 80
+        </p>
+      </div>
+      </div>
+      <div class="mb-3">
+        <label for="Email" class="mb-1">Email :</label>
+        <input formControlName="email" type="email" class="form-control mb-2" />
+        <div
+        *ngIf="
+          registerForm.get('email')?.errors != null &&
+          registerForm.get('email')?.touched
+        "
+        class="alert alert-danger"
+      >
+        <p *ngIf="registerForm.get('email')?.errors?.required">
+          Email is required
+        </p>
+        <p *ngIf="registerForm.get('email')?.errors?.email">
+          Email is invalid
+        </p> 
+      </div>
+      </div>
+      <div class="mb-3">
+        <label for="Password" class="mb-1">Password :</label>
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control mb-2"
+        />
+        <div
+        *ngIf="
+          registerForm.get('password')?.errors != null &&
+          registerForm.get('password')?.touched
+        "
+        class="alert alert-danger"
+      >
+        <p *ngIf="registerForm.get('password')?.errors?.required">
+          Password is required
+        </p>
+        <p *ngIf="registerForm.get('password')?.errors?.pattern">
+          Password is invalid
+        </p>
+      
+      </div>
+      </div>
+  
+      <button  [disabled]='registerForm.invalid' type="submit" class="btn btn-outline-info float-end">Register</button>
+    </form>
+  </div>
+  
+</section>

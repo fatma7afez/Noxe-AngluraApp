@@ -1,0 +1,40 @@
+
+  
+
+  <div class="container vh-100 d-flex align-items-center pt-5">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="movie-img">
+          <img
+          [src]="imgPrefix + detailstv.poster_path"
+            alt="poster-serie"
+            class="w-100 img"
+          />
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-6 col-12">
+        <div class="movie-desc">
+          <div class="details py-2">
+            <h3>{{detailstv.name}}</h3>
+            <p>{{detailstv.overview}}</p>
+          </div>
+           <div class="desc">
+            <p>{{ detailstv.genres[0].name }}</p>
+            <p>{{ detailstv.genres[1].name }}</p>
+          </div>
+          <div class="vote py-5 px-2">
+            <p>vote : {{ detailstv.vote_average }}</p>
+            <p>Popularity : {{ detailstv.popularity }}</p>
+            <p>Vote Count : {{ detailstv.vote_count }}</p>
+            <p>First episode : {{ detailstv.first_air_date }}</p>
+            <p>last episode : {{detailstv.last_air_date }}</p>
+          </div>
+  
+          <!--<div class="details">
+            <p>{{ detailsMovie.overview | tirm: 2 }}</p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row my-5">
+        <h2 class="text-center py-5 h1">Popular People</h2>
+        <div
+        class="col-lg-2 col-md-3 col-md-3 position-relative"
+        *ngFor="let person of peopleTrending"
+      >
+        <div class="movie">
+          <a [routerLink]="['/persondetails' ,person.id ]">
+            <img
+              [src]="imgPrefix + person.profile_path"
+              class="w-100"
+              alt="person-path"
+            />
+            <h3 class="h6 my-md-2 my-3">{{ person.name }}</h3>
+          </a>
+        </div>
+      </div>
+     </div> 
+     <div class="text-center">
+      <pager
+      [totalItems]="totalItems"
+      [(ngModel)]="currentPage"
+      (pageChanged)="pageChanged($event)"
+      pageBtnClass="btn"
+      [itemsPerPage]="10"
+      class="pull-left">
+    </pager>
+    </div>  
+</div>     

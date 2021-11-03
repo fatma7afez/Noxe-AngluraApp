@@ -1,0 +1,34 @@
+<div class="container my-5">
+  <div class="row my-5">
+    <h2 class="text-center py-5 h1">Popular Movies</h2>
+    <div
+      class="col-lg-2 col-md-3 position-relative"
+      *ngFor="let movie of moviesTrending"
+    >
+      <div class="movie">
+        <a [routerLink]="['/moviedetails', movie.id]">
+          <img
+            [src]="imgPrefix + movie.poster_path"
+            class="w-100"
+            alt="movie-path"
+          />
+          <h3 class="h6 my-md-2 my-3">{{ movie.title }}</h3>
+          <div class="vote position-absolute end-0 top-0">
+            {{ movie.vote_average }}
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <pager
+      [totalItems]="totalItems"
+      [(ngModel)]="currentPage"
+      (pageChanged)="pageChanged($event)"
+      pageBtnClass="btn"
+      [itemsPerPage]="10"
+      class="pull-left"
+    >
+    </pager>
+  </div>
+</div>

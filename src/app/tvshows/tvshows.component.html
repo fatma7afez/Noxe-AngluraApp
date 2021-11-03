@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row my-5">
+        <h2 class="text-center py-5 h1">Popular Tvshows</h2>
+        <div
+        class="col-lg-2 col-md-3 position-relative" *ngFor="let serie of tvTrending">
+            <div class="serie">
+              <a [routerLink]="['/seriedetails' ,serie.id ]">
+                <img
+                  [src]="imgPrefix + serie.poster_path"
+                  class="w-100"
+                  alt="serie-path"
+                />
+                <h3 class="h6 my-md-2 my-3">{{ serie.name }}</h3>
+                <div class="vote position-absolute end-0 top-0">
+                  {{ serie.vote_average }}
+                </div>
+              </a>
+            </div>
+          </div>
+    </div>
+    <div class="text-center">
+      <pager
+      [totalItems]="totalItems"
+      [(ngModel)]="currentPage"
+      (pageChanged)="pageChanged($event)"
+      pageBtnClass="btn"
+      [itemsPerPage]="10"
+      class="pull-left">
+    </pager>
+    </div>
+</div>        

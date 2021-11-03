@@ -1,0 +1,75 @@
+<app-header [headerTrendingMovies]="moviesTrending"></app-header>
+<div class="container">
+  <div class="row my-5">
+    <div class="col-lg-4 col-md-3 mb-lg-5  mb-5 mt-lg-5 mt-0 ">
+      <div class="desc position-relative py-4">
+        <h2>Trending Movies To Watch Right Now</h2>
+        <span>Most Watched Movies By Week </span>
+      </div>
+    </div>
+    <div
+      class="col-lg-2 col-md-3 position-relative"
+      *ngFor="let movie of moviesTrending"
+    >
+      <div class="movie">
+        <a [routerLink]="['/moviedetails' ,movie.id ]">
+          <img
+            [src]="imgPrefix + movie.poster_path"
+            class="w-100"
+            alt="movie-path"
+          />
+          <h3 class="h6 my-md-2 my-3">{{ movie.title }}</h3>
+          <div class="vote position-absolute end-0 top-0">
+            {{ movie.vote_average }}
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row my-5">
+    <div class="col-lg-4 col-md-3 mb-lg-5 mt-lg-5 mt-0 mb-5">
+      <div class="desc position-relative py-4">
+        <h2>Trending series To Watch Right Now</h2>
+        <span>Most Watched series By Week </span>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-3 position-relative" *ngFor="let serie of tvTrending">
+      <div class="serie">
+        <a [routerLink]="['/seriedetails' ,serie.id ]">
+          <img
+            [src]="imgPrefix + serie.poster_path"
+            class="w-100"
+            alt="serie-path"
+          />
+          <h3 class="h6 my-md-2 my-3">{{ serie.name }}</h3>
+          <div class="vote position-absolute end-0 top-0">
+            {{ serie.vote_average }}
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-3 mb-lg-5 mt-lg-5 mt-0 mb-5">
+      <div class="desc position-relative py-4">
+        <h2>Trending people To Watch Right Now</h2>
+        <span>Most Watched people By Week </span>
+      </div>
+    </div>
+    <div
+      class="col-lg-2 col-md-3 position-relative"
+      *ngFor="let person of peopleTrending"
+    >
+      <div class="movie">
+        <a [routerLink]="['/persondetails' ,person.id ]">
+          <img
+            [src]="imgPrefix + person.profile_path"
+            class="w-100"
+            alt="person-path"
+          />
+          <h3 class="h6 my-md-2 my-3">{{ person.name }}</h3>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

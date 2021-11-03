@@ -1,0 +1,31 @@
+<div class="container vh-100 d-flex align-items-center pt-5">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="movie-img">
+        <img
+          [src]="imgPrefix + detailsMovie.poster_path"
+          alt="poster-movie"
+          class="w-100 img"
+        />
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-6 col-12">
+      <div class="movie-desc">
+        <div class="details py-4">
+          <h3>{{ detailsMovie.title }}</h3>
+          <p>{{ detailsMovie.overview}}</p>
+        </div>
+        <div class="desc">
+          <p>{{ detailsMovie.genres[0].name }}</p>
+          <p>{{ detailsMovie.genres[1].name }}</p>
+        </div>
+        <div class="vote py-5 px-2">
+          <p>vote : {{ detailsMovie.vote_average }}</p>
+          <p>Release Date : {{ detailsMovie.release_date }}</p>
+          <p>Popularity : {{ detailsMovie.popularity }}</p>
+          <p>Vote Count : {{ detailsMovie.vote_count }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

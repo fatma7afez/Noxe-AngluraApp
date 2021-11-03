@@ -1,0 +1,33 @@
+$mainColor: #131722;
+$fontColor: #fff;
+$textUnDecoration: none;
+$textCapitalize: capitalize;
+
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
+
+body {
+  background-color: $mainColor !important;
+  color: $fontColor;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+a {
+  color: $fontColor !important;
+  text-decoration: $textUnDecoration !important;
+}
+/////////////////////////////////load screen
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+/* font style of website */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+ 
+}
